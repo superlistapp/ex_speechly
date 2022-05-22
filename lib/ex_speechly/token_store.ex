@@ -57,15 +57,15 @@ defmodule ExSpeechly.TokenStore do
   end
 
   def handle_info(:refresh, state) do
-    case Identity.login(Config.device_id(), project_id: Config.project_id()) do
-      # If everything went okay, refresh at the regular interval and store the returned keys in state.
+    scope = %{app_id: Config.app_id(), project_id: Config.project_id()}
+
+    case Identity.login(Config.device_id(), scope) do
       {:ok, %{status: :ok, data: identity}} ->
         store_data_to_ets(identity)
 
         Logger.debug("Refreshed speechly identity.")
         schedule_refresh(identity.valid_for_s)
 
-      # Keep trying with a lower interval, until then keep the old state.
       {:error, %{message: message}} ->
         Logger.warn("""
         Refreshing speechly identity failed, using old state and retrying...
