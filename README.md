@@ -13,3 +13,14 @@ def deps do
   ]
 end
 ```
+
+Add the following configuration to your `config.exs`:
+
+```elixir
+config :ex_speechly,
+  api_key: "", # The api key found in the Speechly dashboard.
+  device_id: "", # A UUID identifying your elixir client.
+  project_id: "", # The project id found in the Speechly dashboard.
+  app_id: "", # The app id found in the Speechly dashboard.
+  host: "https://api.speechly.com:443" # Optional. Defaults to https://api.speechly.com:443
+```
