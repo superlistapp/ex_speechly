@@ -37,7 +37,7 @@ defmodule ExSpeechlyTask do
       end
 
       ExSpeechly.Slu.stop_stream(ref)
-      handle_messages()
+      handle_messages(ref)
     end
   end
 
@@ -53,19 +53,21 @@ defmodule ExSpeechlyTask do
     end
   end
 
-  defp handle_messages(transcript \\ []) do
+  defp handle_messages(ref, transcript \\ []) do
     receive do
       {_ref, %{streaming_response: {:transcript, %{word: word}}}} ->
-        handle_messages([word | transcript])
+        handle_messages(ref, [word | transcript])
 
       {_ref, %{streaming_response: {:finished, _message}}} ->
+        ExSpeechly.Slu.close_stream_subscription(ref)
+
         transcript
         |> Enum.reverse()
         |> Enum.join(" ")
 
       {_ref, message} ->
         Logger.debug(inspect(message))
-        handle_messages(transcript)
+        handle_messages(ref, transcript)
     end
   end
 end
