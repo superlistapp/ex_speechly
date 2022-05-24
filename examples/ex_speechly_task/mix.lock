@@ -1,0 +1,12 @@
+%{
+  "castore": {:hex, :castore, "0.1.17", "ba672681de4e51ed8ec1f74ed624d104c0db72742ea1a5e74edbc770c815182f", [:mix], [], "hexpm", "d9844227ed52d26e7519224525cb6868650c272d4a3d327ce3ca5570c12163f9"},
+  "connection": {:hex, :connection, "1.1.0", "ff2a49c4b75b6fb3e674bfc5536451607270aac754ffd1bdfe175abe4a6d7a68", [:mix], [], "hexpm", "722c1eb0a418fbe91ba7bd59a47e28008a189d47e37e0e7bb85585a016b2869c"},
+  "decimal": {:hex, :decimal, "2.0.0", "a78296e617b0f5dd4c6caf57c714431347912ffb1d0842e998e9792b5642d697", [:mix], [], "hexpm", "34666e9c55dea81013e77d9d87370fe6cb6291d1ef32f46a1600230b1d44f577"},
+  "ex_speechly": {:git, "https://github.com/superlistapp/ex_speechly.git", "9f014f407b9acd79cfc025e465eef3da8bc7aba8", []},
+  "grpc_client": {:hex, :grpc_client, "0.1.1", "9dd15ec73a62778e8bd6d371615b6e416bcd5bbdc6268e5d7a1cc563c7569fec", [:mix], [{:castore, "~> 0.1.0", [hex: :castore, repo: "hexpm", optional: false]}, {:connection, "~> 1.1", [hex: :connection, repo: "hexpm", optional: false]}, {:mint, "~> 1.4", [hex: :mint, repo: "hexpm", optional: false]}, {:nimble_options, "~> 0.4.0", [hex: :nimble_options, repo: "hexpm", optional: false]}, {:protox, "~> 1.6", [hex: :protox, repo: "hexpm", optional: false]}], "hexpm", "40b33f41b174320b798478fb3743bdf5261f686b81f3902afd58825aed549168"},
+  "hpax": {:hex, :hpax, "0.1.1", "2396c313683ada39e98c20a75a82911592b47e5c24391363343bde74f82396ca", [:mix], [], "hexpm", "0ae7d5a0b04a8a60caf7a39fcf3ec476f35cc2cc16c05abea730d3ce6ac6c826"},
+  "mint": {:hex, :mint, "1.4.1", "49b3b6ea35a9a38836d2ad745251b01ca9ec062f7cb66f546bf22e6699137126", [:mix], [{:castore, "~> 0.1.0", [hex: :castore, repo: "hexpm", optional: true]}, {:hpax, "~> 0.1.1", [hex: :hpax, repo: "hexpm", optional: false]}], "hexpm", "cd261766e61011a9079cccf8fa9d826e7a397c24fbedf0e11b49312bea629b58"},
+  "nimble_options": {:hex, :nimble_options, "0.4.0", "c89babbab52221a24b8d1ff9e7d838be70f0d871be823165c94dd3418eea728f", [:mix], [], "hexpm", "e6701c1af326a11eea9634a3b1c62b475339ace9456c1a23ec3bc9a847bca02d"},
+  "protox": {:hex, :protox, "1.6.10", "41d0b0c5b9190e7d5e6a2b1a03a09257ead6f3d95e6a0cf8b81430b526126908", [:mix], [{:decimal, "~> 1.9 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: false]}, {:jason, "~> 1.2", [hex: :jason, repo: "hexpm", optional: true]}], "hexpm", "9769fca26ae7abfc5cc61308a1e8d9e2400ff89a799599cee7930d21132832d9"},
+  "speechly_protox": {:git, "https://github.com/superlistapp/speechly_protox.git", "c9376cc67175de0f87419e5aec73ed21f0bdae16", []},
+}
